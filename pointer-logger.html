@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pointer Event Logger</title>
+  <style>
+    #button {
+      margin: 0;
+      padding: 0;
+      background: lightgray;
+      border: 0;
+      display: block;
+      width: 100%;
+      height: 100px;
+    }
+
+  </style>
+</head>
+
+<body style="margin: 0;">
+  <div id="events"></div>
+  <script>
+    var events = document.getElementById('events');
+
+    function showEvent(event) {
+      console.log(event);
+      var p = document.createElement('p');
+      var relevantProperties = {
+        clientX: event.clientX,
+        clientY: event.clientY,
+        type: event.type,
+        pointerType: event.pointerType
+      };
+      p.innerText = JSON.stringify(relevantProperties, undefined, 2);
+      p.style.whiteSpace = 'pre';
+      p.style.fontFamily = 'monospace';
+      events.prepend(p);
+    }
+    ['pointermove', 'pointerdown', 'pointerup'].forEach(value => {
+      document.addEventListener(value, showEvent);
+    });
+  </script>
+</body>
+
+</html>

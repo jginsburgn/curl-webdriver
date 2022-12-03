@@ -1,0 +1,28 @@
+{
+  "actions": [
+    {
+      "actions": [
+        {
+          "duration": 0,
+          "origin": "viewport",
+          "type": "pointerMove",
+          "x": 392,
+          "y": 42
+        },
+        {
+          "button": 0,
+          "type": "pointerDown"
+        },
+        {
+          "button": 0,
+          "type": "pointerUp"
+        }
+      ],
+      "id": "touch",
+      "parameters": {
+        "pointerType": "touch"
+      },
+      "type": "pointer"
+    }
+  ]
+}
